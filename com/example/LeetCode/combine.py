@@ -34,9 +34,8 @@ def combinations(list, k):
         arr = [list[i],]
         for j in combinations(list[i+1:], k - 1):
             result.append(arr + j)
-            arr = [list[i]]
     return result
 
 
 
-print combinations(["a","d","b","c"], 3)
+print combine(4, 3)
