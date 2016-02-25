@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'summer'
+
+from gcd import gcd
+
 def congruence(a, b, m): #ax ≡ b (mod m)
     result = []
     d = gcd(a, m)
@@ -16,17 +19,5 @@ def congruence(a, b, m): #ax ≡ b (mod m)
             result.append([fin + i * m])
         return str(result)
 
-def gcd(x, y):
-    if x < 0:
-        x = -x
-    if y < 0:
-        y = -y
-    if x < y:
-        return gcd(y, x)
-    else:
-        if y % x == 0:
-            return x
-        else:
-            return gcd(y, x-y)
 
 print congruence(243, 909, 198)
