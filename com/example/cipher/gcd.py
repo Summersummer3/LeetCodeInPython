@@ -12,16 +12,16 @@ def gcd_1(x, y):
         if y % x == 0:
             return x
         else:
-            return gcd_1(y, x-y)
+            return gcd_1(y, x - y)
 
 def gcd(x, y):
     if x < 0:
-        x = -x
+        x = - x
     if y < 0:
-        y = -y
+        y = - y
     if x < y:
         return gcd(y, x)
-    res = x - (x / y) * y
+    res = x % y
     if not res:
         return y
     else:
