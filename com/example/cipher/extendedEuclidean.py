@@ -33,6 +33,3 @@ def multiplicativeInverse(a, b):  # return b^-1 that b^-1 * b ≡ 1 (mod a)
         return res[2]
     else:
         return None
-
-
-print multiplicativeInverse((885320963 - 1) * (238855417 - 1), 9007)

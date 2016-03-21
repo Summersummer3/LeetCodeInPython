@@ -27,5 +27,3 @@ def gcd(x, y):
     else:
         return gcd(y, res)
 
-print gcd(135, 45)
-print gcd_1(135, 45)
