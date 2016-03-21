@@ -12,6 +12,3 @@ def factorial(x):
     for i in xrange(2, x + 1):
         base *= i
     return base
-
-if __name__ == '__main__':
-    print primitive_test(39)
