@@ -9,9 +9,9 @@ def squareAndMultiply(mes, n, b):
     :param b: int, key, we need to count mes ** b
     :return: e int, res = mes ** b (mod n)
     """
-    e = mes
+    e = 1
     pk = str(decimalToBinary(b))
-    for bit in pk[1:]:
+    for bit in pk:
         i = int(bit)
         e = (e ** 2) % n
         if i:
