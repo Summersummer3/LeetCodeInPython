@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'summer'
 from primitive_test import primitive_test
+import math
 
 def factorization(x):
     """
@@ -13,10 +14,9 @@ def factorization(x):
     """
     res = []
     prime_list = []
-    for n in xrange(2, x + 1):
+    for n in xrange(2, int(math.sqrt(x) + 1)):
         if primitive_test(n):
             prime_list.append(n)
-            print prime_list[-1]
     for factor in prime_list:
         degree = 0
         while x % factor == 0:
