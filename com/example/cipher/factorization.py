@@ -14,6 +14,9 @@ def factorization(x):
     """
     res = []
     prime_list = []
+    if primitive_test(x):
+        res.append((x, 1))
+        return res
     for n in xrange(2, int(math.sqrt(x) + 1)):
         if primitive_test(n):
             prime_list.append(n)
