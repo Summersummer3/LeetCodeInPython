@@ -2,6 +2,7 @@
 # __author__ = 'summer'
 from primitive_test import primitive_test
 import math
+import time
 
 def factorization(x):
     """
@@ -14,9 +15,6 @@ def factorization(x):
     """
     res = []
     prime_list = []
-    if primitive_test(x):
-        res.append((x, 1))
-        return res
     for n in xrange(2, int(math.sqrt(x) + 1)):
         if primitive_test(n):
             prime_list.append(n)
@@ -27,8 +25,12 @@ def factorization(x):
             x /= factor
         if degree:
             res.append((factor, degree))
-        if x in prime_list:
-            res.append((x, 1))
-            return res
-        if x == 1:
-            return res
+            if x in prime_list:
+                res.append((x, 1))
+                return res
+            else:
+                if x == 1:
+                    return res
+                if primitive_test(x):
+                    res.append((x, 1))
+                    return res

@@ -22,5 +22,3 @@ def decimalToBinary(n):
     :return:binary int
     """
     return decimalToOther(n, 2)
-
-print decimalToBinary(3533)
