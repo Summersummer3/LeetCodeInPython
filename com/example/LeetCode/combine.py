@@ -37,5 +37,23 @@ def combinations(list, k):
     return result
 
 
+def compare(str, cStr):
+    res = []
+    for s_1 in str:
+        for s_2 in cStr:
+            if s_2 in res:
+                break
+            for i in range(0, len(s_1)):
+                if s_1[i] not in s_2:
+                    break
+                if i == len(s_1) - 1:
+                    res.append(s_2)
+    return res
 
-print combine(4, 3)
+
+
+str = [[1, 4, 7], [3, 6, 7], [2, 5, 7], [1, 2, 6], [2, 3, 4], [1, 3, 5], [4, 5, 6]]
+
+cStr = combine(7, 4)
+
+print compare(str, cStr)

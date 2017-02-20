@@ -18,4 +18,4 @@ def squareAndMultiply(mes, n, b):
             e = (e * mes) % n
     return e
 
-print squareAndMultiply(9726, 11413, 3533)
+print squareAndMultiply(34, 1000, 234)

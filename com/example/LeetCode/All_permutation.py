@@ -17,7 +17,7 @@ class All_permutation:
     def swap(self, arr, i, j):
         tmp = arr[i]
         arr[i] = arr[j]
-arr[j] = tmp
+        arr[j] = tmp
 
 a_p = All_permutation()
 a_p.all_permutation([1, 2, 3, 4, 5], 0, 4)
