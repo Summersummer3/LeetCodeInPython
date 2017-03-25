@@ -29,7 +29,12 @@ def luckyString(str):
     for p in res:
         print p
 
+def input_test():
+    n = int(raw_input())
+    return n
 
 if __name__ == '__main__':
-    str = raw_input()
-    luckyString(str)
+    for i in range(input_test()):
+        s = raw_input().strip().strip()
+
+
