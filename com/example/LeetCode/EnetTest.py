@@ -20,7 +20,6 @@ def score():
     return res
 
 def changeTimes(lst):
-    print lst
     times = 0
     i = 0
     end = False
@@ -40,26 +39,25 @@ def changeTimes(lst):
             for n in xrange(j, i, -1):
                 lst[n] = lst[n - 1]
             lst[i + 1] = tmp
-            print i, j, lst
             times += (j - i - 1)
             i += 1
         else:
             i += 1
-    print times
     return times
 
 def countTimes(str):
-    times = 0
-    count = 0
+    times_g = 0
+    times_b = 0
+    count_g = 0
+    count_b = 0
     for i in xrange(len(str)):
-        if not i:
-            stay = str[i]
-        elif str[i] != stay:
-            count += 1
+        if str[i] == "G":
+            count_g += 1
+            times_g += count_b
         else:
-            times += count
-    return times
-
+            count_b += 1
+            times_b += count_g
+    return min(times_g, times_b)
 
 if __name__ == '__main__':
     lst_1 = []
@@ -68,9 +66,9 @@ if __name__ == '__main__':
     for c in s:
         lst_1.append(c)
         lst_2.append(c)
-    lst_2.reverse()
     print min(changeTimes(lst_1), changeTimes(lst_2))
     print countTimes(s)
+
 
 
 
