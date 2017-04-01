@@ -30,7 +30,6 @@ def kmp(s, c):
             count += 1
             if len(s) - i >= len(c):
                 j = 0
-
     return count
 
 

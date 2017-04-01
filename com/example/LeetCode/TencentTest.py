@@ -1,8 +1,24 @@
 # -*- coding: utf-8 -*-
-# __author__ = 'summer'
+# __author__ = 'summer'#
 
-# def letterShift(str):
-    # for s in str:
+import sys
+
+
+def realize(str):
+    lst = list(str)
+    l = len(lst)
+    i = 0
+    count = 0
+    while count < l:
+        if lst[i].isupper():
+            tmp = lst[i]
+            lst.remove(tmp)
+            lst.append(tmp)
+        else:
+            i += 1
+        count += 1
+    return lst
+
 
 def countDiff(arr):
     if len(arr) < 2:
@@ -41,10 +57,20 @@ def countDiff(arr):
     print minCount, maxCount
 
 if __name__ == '__main__':
-    while True:
-        try:
-            n = int(raw_input())
-            arr = [int(t) for t in raw_input().strip().split()]
-            countDiff(arr)
-        except:
-            break
+    # while True:
+    #     try:
+    #         n = int(raw_input())
+    #         arr = [int(t) for t in raw_input().strip().split()]
+    #         countDiff(arr)
+    #     except:
+    #         break
+    # while True:
+    #     s = input()
+    #     if isinstance(s, str):
+    #         print "".join(realize("hxKLAGLLzPyTxsFsrUnnSKQBHdQQrOyaEYJRgiJbHIDXFcQkFmIhPNKIBfHxXDBdKAvgZiBLVwnlxJAHmttsSJkZhSmQneNVoKoIYZRjPqsrFFaaqZbyNyeRjVKVFrCGdfycidTqbyQcpAtdRGzzBAaKoqybWMOyhrCQdwcRwQQpQavTnAbjriVwxJOrTYJVGYSWzKYeNAGqBzkJLucabNYvyVFxAGKLfqHXNttaqZfncEdTroGMzZnDbvZBBaRbJvuYIvlWrKaaGrvtyxrsCUOqxdwCrmVEeDrLKZKFJVRmrLsmbmOGUJyfdZIrFhuSwJQGRTYMLxKQNMaCavatlQIRZmFQvyWgQTVENxUcPKQCaUQbjyfaNuwoNdTBNldgrtPUcQodqsuJOdDpUczJWCZaasDdEYJkvituMHrCmZQSlRjIefVisatIUtfxBeKnHPyvWUKzRliFsYWgeXogiEgXDbfxAybwFuqFyEvjfIHEPDPKqEiGUtZhdDIDBGKpvBFyqHeEEhAToAbqHEpIdIhIGBtWjGHiQRctZxQQYkfFoWUbqZyIcjRPQBilHrnqNBzFmoRUYCSrGkawJCcOrMceegISpIpSGVjbngWVMTYtGoAlQFPFyOFAxndJZNfKDTwFIxisKTjyjchidXpYgLfoBOLriuIAHmAbQwoHBgbdUYBHlDQGZJASsHszOEPthLVnYbNqWegmONexfdsTVYHgtDmlyugefOBsqmgNDBoxkkhVHfvrYooVOyxDJQJLjYSngksbTopoPJFsKQzHePLukXyYTYCeW"))
+    #     else:
+    #         break
+    s = sys.stdin.readline().strip()
+    while s:
+        print "".join(realize(s))
+        s = sys.stdin.readline().strip()
