@@ -3,6 +3,24 @@
 
 import sys
 
+def longestSubsquenceForReverse(s):
+    v = 0
+    dp = []
+    for i in xrange(len(s) + 1):
+        dp.append([0])
+        if not i:
+            for j in xrange(1, len(s) + 1):
+                dp[i].append(0)
+    while v < len(s):
+        w = len(s) - 1
+        while w >= 0:
+            if s[v] == s[w]:
+                dp[v + 1].append(dp[v][len(s) - w - 1] + 1)
+            else:
+                dp[v + 1].append(max(dp[v][len(s) - w], dp[v + 1][len(s) - w - 1]))
+            w -= 1
+        v += 1
+    return dp[-1][-1]
 
 def realize(str):
     lst = list(str)
@@ -72,5 +90,5 @@ if __name__ == '__main__':
     #         break
     s = sys.stdin.readline().strip()
     while s:
-        print "".join(realize(s))
+        print len(s) - longestSubsquenceForReverse(s)
         s = sys.stdin.readline().strip()
