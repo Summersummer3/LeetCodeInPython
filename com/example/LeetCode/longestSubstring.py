@@ -21,5 +21,19 @@ def lengthOfLongestSubstring(s):
             max_len = max(max_len, tmp_len)
     return max_len
 
+def LongestSubstringWithoutDuplicate(s):
+    arr = []
+    for v in s:
+        if v not in arr:
+            arr.append(v)
+        else:
+            arr.remove(v)
+            arr.append(v)
+    return " ".join(arr)
 
-print lengthOfLongestSubstring("afshkashfohiowefhowerovbhndsfovndfsiou;hvdfjklohgbvio8:rgioverbvio/:dfhjk/logbhvdfjk/ghkefhgkutrhgkejrhkjehuehghufru")
+if __name__ == '__main__':
+    n = raw_input()
+    s = raw_input().strip().split()
+    print LongestSubstringWithoutDuplicate(s)
+
+
