@@ -33,7 +33,6 @@ def kmp(s, c):
     return count
 
 
-
 def pos_generate(str):
     pos = [-1]
     for i in xrange(1, len(str)):
