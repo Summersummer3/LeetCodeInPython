@@ -53,4 +53,4 @@ def myAtoi(str):
 
 
 print myAtoi("     +0a32")
-print string.atoi(" 023a", )  # not useful!
+# print string.atoi(" 023a", )  #not useful!
