@@ -5,7 +5,7 @@ def subsequence(num):
     dp = [0] * len(num)
     dp[0] = [num[0]]
     max_l = 1
-    max_i = 0
+    max_i = [0]
 
     for i in xrange(1, len(num)):
         if num[i] > num[i - 1]:
@@ -26,9 +26,12 @@ def subsequence(num):
                     dp[i].append(num[i])
         if len(dp[i]) > max_l:
             max_l = len(dp[i])
-            max_i = i
+            max_i = [i]
+        elif len(dp[i]) == max_l:
+            max_i.append(i)
 
-    return dp[max_i]
+    for k in max_i:
+        print dp[k]
 
-print subsequence([10, 9, 2, 5, 3, 7, 101, 18])
+subsequence([10, 9, 2, 5, 3, 7, 101, 18])
 
