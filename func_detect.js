@@ -10,8 +10,8 @@ function enumMethods(targetClass)
 setTimeout(function (){
 	Java.perform(function (){
 		var a = enumMethods("com.huawei.nearby.ble.advstack.c")
-        	a.forEach(function(s) {
-            	console.log(s);
-        	});
+        a.forEach(function(s) {
+            console.log(s);
+        });
 	});
 });
